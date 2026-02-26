@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+   <script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  async
+  defer>
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checkout - Delivery Details</title>
@@ -168,7 +173,8 @@ Next Business Day Delivery • Free
 <div style="display:flex;gap:12px;margin-top:12px;align-items:center;">
   <img src="p1.png" style="width:60px;height:60px;object-fit:contain;border:1px solid #eee;border-radius:6px;">
   <div style="font-size:14px;font-weight:700;">
-    JBL Go 3 Waterproof Portable Bluetooth Speaker
+    Air Fryer 6L LED Display + Blender with Mill 500W - BLP15.150WH
+    
   </div>
 </div>
 
@@ -234,7 +240,7 @@ openPayment.onclick = ()=>{
     const postal = fPostal.value;
     const prov = provinceInput.value;
 
-    orName.innerText = street || "Home";
+    orName.innerText = street || "Casa";
     orAddress.innerText = `${street}, ${city}, ${prov}, ${postal}`;
     orPerson.innerText = name;
     orPhone.innerText = phone;
@@ -250,14 +256,24 @@ openPayment.onclick = ()=>{
     // MOSTRAR BOTÃO FINAL
     completePurchase.style.display = "block";
 
-    orderReview.scrollIntoView({behavior:"smooth"});
+orderReview.scrollIntoView({behavior:"smooth"});
 
-  },3000);
+},3000);
 }
+
 completePurchase.onclick = () => {
-  window.location.href = "https://payjsr.com/pay/bc03be59-add7-4fe8-8a46-f21a27c037dc";
+
+  const params = window.location.search;
+
+  const checkoutURL =
+    "https://app.quorapay.online/pay/afc07887-3e0e-4549-bff2-2a4844e2ba06";
+
+  window.location.href = checkoutURL + (params ? params : "");
+
 };
 </script>
-
 </body>
 </html>
+
+
+
